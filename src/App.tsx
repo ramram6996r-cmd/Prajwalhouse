@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Search,
   SlidersHorizontal,
@@ -94,6 +94,19 @@ export default function App() {
 
   // Pending property to open immediately after login
   const [pendingProperty, setPendingProperty] = useState<Property | null>(null);
+
+  // Ref to scroll to listings when Search button is clicked
+  const listingsSectionRef = useRef<HTMLElement>(null);
+  const [isSearchingVisual, setIsSearchingVisual] = useState<boolean>(false);
+
+  const handleExecuteSearch = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    setIsSearchingVisual(true);
+    setTimeout(() => {
+      setIsSearchingVisual(false);
+      listingsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  };
 
   // Save user changes
   const handleLogin = (user: UserProfile) => {
@@ -248,10 +261,14 @@ export default function App() {
   const popularLocalities = [
     'Indiranagar',
     'HSR Layout',
+    'Koramangala',
+    'Whitefield',
     'Bandra West',
-    'DLF Cyber City',
+    'Powai',
+    'Worli',
     'Financial District',
-    'Koramangala'
+    'DLF Cyber City',
+    'Koregaon Park'
   ];
 
   return (
@@ -408,98 +425,126 @@ export default function App() {
                     </button>
                   </div>
 
-                  {/* Primary Search Inputs Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 mb-4">
-                    {/* City Dropdown */}
-                    <div className="sm:col-span-3">
-                      <label className="block text-[11px] font-semibold text-neutral-500 mb-1">
-                        Select City
-                      </label>
-                      <select
-                        value={selectedCity}
-                        onChange={(e) => setSelectedCity(e.target.value)}
-                        className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-neutral-900 bg-white font-medium"
-                      >
-                        <option value="All">All Metro Cities</option>
-                        <option value="Bengaluru">Bengaluru</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Gurugram">Gurugram</option>
-                        <option value="Hyderabad">Hyderabad</option>
-                        <option value="Pune">Pune</option>
-                      </select>
+                  {/* Primary Search Inputs Grid with Prominent Search Button */}
+                  <form onSubmit={handleExecuteSearch} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
+                      {/* City Dropdown */}
+                      <div className="sm:col-span-3">
+                        <label className="block text-[11px] font-semibold text-neutral-600 mb-1">
+                          Select City
+                        </label>
+                        <select
+                          value={selectedCity}
+                          onChange={(e) => setSelectedCity(e.target.value)}
+                          className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-neutral-900 bg-white font-medium shadow-2xs h-[38px]"
+                        >
+                          <option value="All">All Metro Cities</option>
+                          <option value="Bengaluru">Bengaluru</option>
+                          <option value="Mumbai">Mumbai</option>
+                          <option value="Gurugram">Gurugram</option>
+                          <option value="Hyderabad">Hyderabad</option>
+                          <option value="Pune">Pune</option>
+                        </select>
+                      </div>
+
+                      {/* Search Locality Input */}
+                      <div className="sm:col-span-4 relative">
+                        <label className="block text-[11px] font-semibold text-neutral-600 mb-1">
+                          Locality or Landmark
+                        </label>
+                        <div className="relative">
+                          <Search className="w-4 h-4 text-neutral-400 absolute left-3 top-2.5" />
+                          <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="e.g. Indiranagar, Bandra, Powai, HSR..."
+                            className="w-full pl-9 pr-8 py-2 text-xs border border-neutral-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-neutral-900 bg-white shadow-2xs h-[38px]"
+                          />
+                          {searchQuery && (
+                            <button
+                              type="button"
+                              onClick={() => setSearchQuery('')}
+                              className="absolute right-2.5 top-2.5 text-neutral-400 hover:text-neutral-700 p-0.5 cursor-pointer"
+                              title="Clear search"
+                            >
+                              <X className="w-3.5 h-3.5" />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Configuration / BHK */}
+                      <div className="sm:col-span-2">
+                        <label className="block text-[11px] font-semibold text-neutral-600 mb-1">
+                          Configuration
+                        </label>
+                        <select
+                          value={selectedBhk}
+                          onChange={(e) => setSelectedBhk(e.target.value)}
+                          className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-neutral-900 bg-white font-medium shadow-2xs h-[38px]"
+                        >
+                          <option value="All">Any BHK</option>
+                          <option value="1 BHK">1 BHK</option>
+                          <option value="2 BHK">2 BHK</option>
+                          <option value="3 BHK">3 BHK</option>
+                          <option value="4 BHK">4 BHK</option>
+                          <option value="Studio">Studio</option>
+                        </select>
+                      </div>
+
+                      {/* PROMINENT SEARCH ACTION BUTTON */}
+                      <div className="sm:col-span-3">
+                        <button
+                          type="submit"
+                          className="w-full py-2 px-4 bg-amber-400 hover:bg-amber-500 active:bg-amber-600 text-neutral-950 font-bold text-xs rounded-lg transition-all flex items-center justify-center gap-2 shadow-xs hover:shadow-sm cursor-pointer h-[38px]"
+                        >
+                          <Search className="w-4 h-4 stroke-[2.5]" />
+                          <span>Search Properties</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
 
-                    {/* Search Locality Input */}
-                    <div className="sm:col-span-6 relative">
-                      <label className="block text-[11px] font-semibold text-neutral-500 mb-1">
-                        Search Locality or Landmark
-                      </label>
-                      <div className="relative">
-                        <Search className="w-4 h-4 text-neutral-400 absolute left-3 top-2.5" />
+                    {/* Popular Localities Chips & Filters Bar */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-neutral-100 text-xs">
+                      <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
+                        <span className="text-[11px] font-medium text-neutral-400 shrink-0">Popular:</span>
+                        {popularLocalities.map((loc) => (
+                          <button
+                            type="button"
+                            key={loc}
+                            onClick={() => {
+                              setSearchQuery(loc);
+                              handleExecuteSearch();
+                            }}
+                            className={`px-2 py-0.5 rounded text-[11px] transition-colors whitespace-nowrap cursor-pointer ${
+                              searchQuery.toLowerCase().includes(loc.toLowerCase())
+                                ? 'bg-neutral-900 text-white font-semibold'
+                                : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
+                            }`}
+                          >
+                            {loc}
+                          </button>
+                        ))}
+                      </div>
+
+                      <div className="flex items-center gap-3 shrink-0">
+                        <div className="text-[11px] text-neutral-600 font-medium">
+                          Max Rent: <strong className="text-neutral-900">₹{maxBudget.toLocaleString('en-IN')}/mo</strong>
+                        </div>
                         <input
-                          type="text"
-                          value={searchQuery}
-                          onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="e.g. Indiranagar, HSR, Manyata, Bandra..."
-                          className="w-full pl-9 pr-3 py-2 text-xs border border-neutral-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-neutral-900"
+                          type="range"
+                          min={20000}
+                          max={250000}
+                          step={5000}
+                          value={maxBudget}
+                          onChange={(e) => setMaxBudget(Number(e.target.value))}
+                          className="w-24 accent-neutral-900 cursor-pointer"
                         />
                       </div>
                     </div>
-
-                    {/* Configuration / BHK */}
-                    <div className="sm:col-span-3">
-                      <label className="block text-[11px] font-semibold text-neutral-500 mb-1">
-                        Configuration
-                      </label>
-                      <select
-                        value={selectedBhk}
-                        onChange={(e) => setSelectedBhk(e.target.value)}
-                        className="w-full px-3 py-2 text-xs border border-neutral-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-neutral-900 bg-white font-medium"
-                      >
-                        <option value="All">Any BHK</option>
-                        <option value="1 BHK">1 BHK</option>
-                        <option value="2 BHK">2 BHK</option>
-                        <option value="3 BHK">3 BHK</option>
-                        <option value="4 BHK">4 BHK</option>
-                        <option value="Studio">Studio</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Popular Localities Chips & Filters Bar */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-neutral-100 text-xs">
-                    <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1">
-                      <span className="text-[11px] font-medium text-neutral-400 shrink-0">Popular:</span>
-                      {popularLocalities.map((loc) => (
-                        <button
-                          key={loc}
-                          onClick={() => setSearchQuery(loc)}
-                          className={`px-2 py-0.5 rounded text-[11px] transition-colors whitespace-nowrap cursor-pointer ${
-                            searchQuery === loc
-                              ? 'bg-neutral-900 text-white font-semibold'
-                              : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
-                          }`}
-                        >
-                          {loc}
-                        </button>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center gap-3 shrink-0">
-                      <div className="text-[11px] text-neutral-600 font-medium">
-                        Max Rent: <strong className="text-neutral-900">₹{maxBudget.toLocaleString('en-IN')}/mo</strong>
-                      </div>
-                      <input
-                        type="range"
-                        min={20000}
-                        max={250000}
-                        step={5000}
-                        value={maxBudget}
-                        onChange={(e) => setMaxBudget(Number(e.target.value))}
-                        className="w-24 accent-neutral-900 cursor-pointer"
-                      />
-                    </div>
-                  </div>
+                  </form>
                 </div>
 
                 {/* Trust Badges Bar */}
@@ -572,45 +617,173 @@ export default function App() {
             </section>
 
             {/* PROPERTIES LISTINGS SECTION */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-neutral-200">
+            <section
+              id="properties-listings"
+              ref={listingsSectionRef}
+              className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 scroll-mt-20"
+            >
+              {/* Listings Header & Sort */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-neutral-200">
                 <div>
-                  <h2 className="text-xl font-bold text-neutral-900">
-                    Verified House Owner Listings
+                  <h2 className="text-xl font-bold text-neutral-900 flex items-center gap-2">
+                    <span>Verified House Owner Listings</span>
+                    {isSearchingVisual && (
+                      <span className="text-xs bg-amber-100 text-amber-900 font-normal px-2 py-0.5 rounded animate-pulse">
+                        Updating results...
+                      </span>
+                    )}
                   </h2>
                   <p className="text-xs text-neutral-500 mt-0.5">
-                    Showing {filteredProperties.length} homes with 100% zero brokerage & AI Privacy Shield
+                    Showing <strong className="text-neutral-900">{filteredProperties.length}</strong> of {properties.length} homes with 100% zero brokerage & AI Privacy Shield
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <span className="text-xs text-neutral-500 font-medium">Sort by:</span>
+                {/* Inline Refinement Search Bar with Search Button */}
+                <form
+                  onSubmit={handleExecuteSearch}
+                  className="flex items-center gap-2 w-full sm:w-auto"
+                >
+                  <div className="relative flex-1 sm:w-64">
+                    <Search className="w-3.5 h-3.5 text-neutral-400 absolute left-2.5 top-2.5" />
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search locality, street, or project..."
+                      className="w-full pl-8 pr-7 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white focus:outline-hidden focus:ring-2 focus:ring-neutral-900"
+                    />
+                    {searchQuery && (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery('')}
+                        className="absolute right-2 top-2 text-neutral-400 hover:text-neutral-700 cursor-pointer"
+                        title="Clear"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-3.5 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs rounded-lg transition-colors flex items-center gap-1.5 shadow-xs cursor-pointer shrink-0"
+                  >
+                    <Search className="w-3.5 h-3.5 stroke-[2.5]" />
+                    <span>Search</span>
+                  </button>
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="px-2.5 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white font-medium"
+                    className="px-2.5 py-1.5 text-xs border border-neutral-300 rounded-lg bg-white font-medium shrink-0 cursor-pointer"
                   >
                     <option value="recommended">Recommended</option>
                     <option value="price_low">Rent: Low to High</option>
                     <option value="price_high">Rent: High to Low</option>
                     <option value="area_high">Carpet Area: High to Low</option>
                   </select>
+                </form>
+              </div>
 
-                  {(selectedCity !== 'All' || selectedBhk !== 'All' || searchQuery) && (
+              {/* City & BHK Quick Filter Tabs Strip */}
+              <div className="bg-white p-3.5 rounded-xl border border-neutral-200 mb-6 space-y-3 shadow-2xs">
+                {/* City Filter Pills */}
+                <div className="flex flex-wrap items-center gap-1.5 text-xs">
+                  <span className="text-[11px] font-semibold text-neutral-400 shrink-0 mr-1 flex items-center gap-1">
+                    <MapPin className="w-3 h-3 text-neutral-500" />
+                    <span>City:</span>
+                  </span>
+                  {['All', 'Bengaluru', 'Mumbai', 'Gurugram', 'Hyderabad', 'Pune'].map((c) => (
                     <button
+                      key={c}
+                      type="button"
+                      onClick={() => setSelectedCity(c)}
+                      className={`px-3 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer ${
+                        selectedCity === c
+                          ? 'bg-neutral-900 text-white font-semibold shadow-xs'
+                          : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
+                      }`}
+                    >
+                      {c === 'All' ? 'All Cities' : c}
+                    </button>
+                  ))}
+                </div>
+
+                {/* BHK Filter Pills */}
+                <div className="flex flex-wrap items-center gap-1.5 text-xs pt-2 border-t border-neutral-100">
+                  <span className="text-[11px] font-semibold text-neutral-400 shrink-0 mr-1 flex items-center gap-1">
+                    <Home className="w-3 h-3 text-neutral-500" />
+                    <span>BHK:</span>
+                  </span>
+                  {['All', '1 BHK', '2 BHK', '3 BHK', '4 BHK', 'Studio'].map((b) => (
+                    <button
+                      key={b}
+                      type="button"
+                      onClick={() => setSelectedBhk(b)}
+                      className={`px-2.5 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer ${
+                        selectedBhk === b
+                          ? 'bg-amber-400 text-neutral-950 font-bold shadow-xs'
+                          : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
+                      }`}
+                    >
+                      {b === 'All' ? 'All BHK' : b}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Active Applied Filters Strip with 1-Click Clear */}
+                {(selectedCity !== 'All' || selectedBhk !== 'All' || searchQuery.trim() || maxBudget < 250000 || selectedFurnishing !== 'All') && (
+                  <div className="flex flex-wrap items-center gap-2 pt-2.5 border-t border-neutral-100 text-xs">
+                    <span className="text-[11px] font-semibold text-neutral-500">Applied Filters:</span>
+                    {selectedCity !== 'All' && (
+                      <button
+                        type="button"
+                        onClick={() => setSelectedCity('All')}
+                        className="inline-flex items-center gap-1 text-[11px] bg-neutral-100 hover:bg-neutral-200 text-neutral-800 px-2 py-0.5 rounded cursor-pointer"
+                      >
+                        City: {selectedCity} <X className="w-3 h-3 text-neutral-500" />
+                      </button>
+                    )}
+                    {selectedBhk !== 'All' && (
+                      <button
+                        type="button"
+                        onClick={() => setSelectedBhk('All')}
+                        className="inline-flex items-center gap-1 text-[11px] bg-neutral-100 hover:bg-neutral-200 text-neutral-800 px-2 py-0.5 rounded cursor-pointer"
+                      >
+                        Type: {selectedBhk} <X className="w-3 h-3 text-neutral-500" />
+                      </button>
+                    )}
+                    {searchQuery.trim() && (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery('')}
+                        className="inline-flex items-center gap-1 text-[11px] bg-neutral-100 hover:bg-neutral-200 text-neutral-800 px-2 py-0.5 rounded cursor-pointer"
+                      >
+                        Keyword: "{searchQuery}" <X className="w-3 h-3 text-neutral-500" />
+                      </button>
+                    )}
+                    {maxBudget < 250000 && (
+                      <button
+                        type="button"
+                        onClick={() => setMaxBudget(250000)}
+                        className="inline-flex items-center gap-1 text-[11px] bg-neutral-100 hover:bg-neutral-200 text-neutral-800 px-2 py-0.5 rounded cursor-pointer"
+                      >
+                        Max Rent: ₹{maxBudget.toLocaleString('en-IN')} <X className="w-3 h-3 text-neutral-500" />
+                      </button>
+                    )}
+                    <button
+                      type="button"
                       onClick={() => {
                         setSelectedCity('All');
                         setSelectedBhk('All');
+                        setSelectedFurnishing('All');
                         setSearchQuery('');
                         setMaxBudget(250000);
                       }}
-                      className="text-xs text-neutral-500 hover:text-neutral-900 underline flex items-center gap-1"
+                      className="text-[11px] font-semibold text-amber-800 hover:underline ml-2 cursor-pointer"
                     >
-                      <X className="w-3.5 h-3.5" />
-                      <span>Reset</span>
+                      Reset All Filters
                     </button>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
 
               {loading ? (

@@ -1,50 +1,5 @@
 [
   {
-    "id": "prop-1792780372175",
-    "title": "Charming 2 BHK in Indiranagar Near Metro",
-    "tagline": "Direct from Owner · Verified Listing",
-    "description": "",
-    "propertyType": "2 BHK",
-    "bhk": 2,
-    "bathrooms": 2,
-    "balconies": 1,
-    "carpetAreaSqFt": 1100,
-    "furnishing": "Fully Furnished",
-    "floor": "1st floor",
-    "totalFloors": 4,
-    "monthlyRent": 36000,
-    "securityDeposit": 100000,
-    "maintenanceCharges": 0,
-    "city": "Bengaluru",
-    "locality": "City Center",
-    "confidentialExactAddress": "Flat 202, Green Meadows, 5th Main, Indiranagar, Bengaluru - 560038",
-    "googleMapsCoordinates": {
-      "lat": 12.9716,
-      "lng": 77.5946
-    },
-    "ownerId": "owner-new-123",
-    "ownerName": "Ramesh Kumar",
-    "confidentialOwnerPhone": "+91 98459 99888",
-    "confidentialOwnerEmail": "owner@example.com",
-    "images": [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
-    ],
-    "amenities": [
-      "Covered Car Parking",
-      "24/7 Security"
-    ],
-    "houseRules": {
-      "tenantPreference": "Any",
-      "foodPreference": "Any",
-      "petPolicy": "Discuss with Owner",
-      "lockInPeriod": "6 Months",
-      "noticePeriod": "1 Month"
-    },
-    "availableFrom": "Immediate",
-    "verified": true,
-    "createdAt": "2026-10-23T18:32:52.175Z"
-  },
-  {
     "id": "prop-101",
     "title": "Sunlit 3 BHK in Sobha City with Green Park View",
     "tagline": "Premium gated society with Olympic clubhouse, 100% power backup",
@@ -348,5 +303,301 @@
     "availableFrom": "Immediate",
     "verified": true,
     "createdAt": "2026-04-01T12:00:00.000Z"
+  },
+  {
+    "id": "prop-107",
+    "title": "Lakefront 3 BHK in Raheja Vistas with Panoramic Deck",
+    "tagline": "Minutes from Hiranandani Business Park & IIT Powai",
+    "description": "Beautifully appointed 3 BHK home overlooking the Powai greens and lake breeze. Spacious living room with attached balcony, modular kitchen with hob and chimney, laminated wooden flooring in children bedroom, and access to premium clubhouse with tennis courts.",
+    "propertyType": "3 BHK",
+    "bhk": 3,
+    "bathrooms": 3,
+    "balconies": 2,
+    "carpetAreaSqFt": 1650,
+    "furnishing": "Semi-Furnished",
+    "floor": "11th of 16 floors",
+    "totalFloors": 16,
+    "monthlyRent": 68000,
+    "securityDeposit": 200000,
+    "maintenanceCharges": 5000,
+    "city": "Mumbai",
+    "locality": "Powai (Near Hiranandani & IIT)",
+    "confidentialExactAddress": "Flat 1102, Wing C, Raheja Vistas, Raheja Vihar, Powai, Mumbai - 400072. Landmark: Opposite Chandivali Studio",
+    "googleMapsCoordinates": {
+      "lat": 19.1176,
+      "lng": 72.8986
+    },
+    "ownerId": "owner-7",
+    "ownerName": "Rajesh Khurana",
+    "confidentialOwnerPhone": "+91 98205 11928",
+    "confidentialOwnerEmail": "rajesh.khurana.mumbai@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Reserved Stilt Car Parking",
+      "Clubhouse with Gymnasium & Squash Court",
+      "Swimming Pool",
+      "Piped Gas (MGL)",
+      "High Speed Elevators",
+      "24/7 Gated Security"
+    ],
+    "houseRules": {
+      "tenantPreference": "Family / Working Professionals",
+      "foodPreference": "Any",
+      "petPolicy": "Pets Allowed",
+      "lockInPeriod": "11 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-04-03T10:00:00.000Z"
+  },
+  {
+    "id": "prop-108",
+    "title": "Spacious 2 BHK in Prestige Shantiniketan Corridor",
+    "tagline": "Walkable to ITPL, Nexus Shantiniketan Mall & Metro Station",
+    "description": "Bright and airy east-facing 2 BHK flat in one of Whitefields premier townships. Includes modular kitchen with breakfast counter, large utility balcony, dedicated covered car park, and access to hypermarket and mall inside the complex.",
+    "propertyType": "2 BHK",
+    "bhk": 2,
+    "bathrooms": 2,
+    "balconies": 2,
+    "carpetAreaSqFt": 1350,
+    "furnishing": "Semi-Furnished",
+    "floor": "6th of 18 floors",
+    "totalFloors": 18,
+    "monthlyRent": 38000,
+    "securityDeposit": 140000,
+    "maintenanceCharges": 3200,
+    "city": "Bengaluru",
+    "locality": "Whitefield (Near ITPL & Metro)",
+    "confidentialExactAddress": "Tower 14, Flat 604, Prestige Shantiniketan, ITPL Main Road, Whitefield, Bengaluru - 560048. Landmark: Near Manipal Hospital",
+    "googleMapsCoordinates": {
+      "lat": 12.9892,
+      "lng": 77.7281
+    },
+    "ownerId": "owner-8",
+    "ownerName": "Ananya Roy",
+    "confidentialOwnerPhone": "+91 97412 88301",
+    "confidentialOwnerEmail": "ananya.roy.tech@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Covered Basement Parking",
+      "24/7 Power Backup",
+      "Olympic Swimming Pool",
+      "Badminton & Tennis Courts",
+      "On-site Retail & Food Court",
+      "CCTV & Video Door Bell"
+    ],
+    "houseRules": {
+      "tenantPreference": "Working Professionals / Small Family",
+      "foodPreference": "Any (Non-veg allowed)",
+      "petPolicy": "Pets Allowed",
+      "lockInPeriod": "6 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-04-05T08:30:00.000Z"
+  },
+  {
+    "id": "prop-109",
+    "title": "Boutique 1 BHK Apartment in Koramangala 5th Block",
+    "tagline": "Heart of Bengaluru startup capital, cafes & co-working spaces",
+    "description": "Compact yet smartly planned 1 BHK home in a quiet tree-lined lane of Koramangala 5th Block. Comes with split AC, double bed with mattress, wardrobe, modular pantry with microwave, and high-speed fiber internet. Zero brokerage.",
+    "propertyType": "1 BHK",
+    "bhk": 1,
+    "bathrooms": 1,
+    "balconies": 1,
+    "carpetAreaSqFt": 620,
+    "furnishing": "Fully Furnished",
+    "floor": "2nd of 4 floors (With Lift)",
+    "totalFloors": 4,
+    "monthlyRent": 24000,
+    "securityDeposit": 80000,
+    "maintenanceCharges": 1500,
+    "city": "Bengaluru",
+    "locality": "Koramangala 5th Block (Near Empire & Jyoti Nivas)",
+    "confidentialExactAddress": "Apartment 204, Ashoka Enclave, 1st Cross, 5th Block, Koramangala, Bengaluru - 560095. Landmark: Behind Empire Restaurant",
+    "googleMapsCoordinates": {
+      "lat": 12.9352,
+      "lng": 77.6245
+    },
+    "ownerId": "owner-9",
+    "ownerName": "Deepak Shenoy",
+    "confidentialOwnerPhone": "+91 98860 45291",
+    "confidentialOwnerEmail": "deepak.shenoy.kora@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Dedicated Bike & Stilt Car Parking",
+      "High Speed Elevator",
+      "Split Air Conditioner & 43\" Smart TV",
+      "Refrigerator & Microwave",
+      "24/7 Security Guard"
+    ],
+    "houseRules": {
+      "tenantPreference": "Bachelors / Working Professionals Welcome",
+      "foodPreference": "Any",
+      "petPolicy": "Small pets allowed",
+      "lockInPeriod": "6 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-04-07T11:00:00.000Z"
+  },
+  {
+    "id": "prop-110",
+    "title": "Opulent 3 BHK Sea-Facing Residence in Worli Sea Face",
+    "tagline": "Breathtaking Bandra-Worli Sea Link view, private foyer, luxury amenities",
+    "description": "Exclusive sea-facing 3 BHK luxury apartment offering uninterrupted views of the Arabian Sea and Mumbai Sea Link. Features Italian travertine marble floors, central VRV air conditioning, Poggenpohl kitchen, and 24/7 concierge assistance.",
+    "propertyType": "3 BHK",
+    "bhk": 3,
+    "bathrooms": 4,
+    "balconies": 2,
+    "carpetAreaSqFt": 2200,
+    "furnishing": "Fully Furnished",
+    "floor": "14th of 28 floors",
+    "totalFloors": 28,
+    "monthlyRent": 145000,
+    "securityDeposit": 500000,
+    "maintenanceCharges": 12000,
+    "city": "Mumbai",
+    "locality": "Worli Sea Face / Lower Parel Corridor",
+    "confidentialExactAddress": "Flat 1401, Sagar Tarang, Worli Sea Face Road, Worli, Mumbai - 400018. Landmark: Near Sea Link Promenade",
+    "googleMapsCoordinates": {
+      "lat": 19.0144,
+      "lng": 72.8155
+    },
+    "ownerId": "owner-10",
+    "ownerName": "Sunita Piramal",
+    "confidentialOwnerPhone": "+91 98210 66345",
+    "confidentialOwnerEmail": "sunita.piramal.worli@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "2 Dedicated Covered Basement Parking slots",
+      "Sea-facing Infinity Pool & Jacuzzi",
+      "Fully Equipped Fitness Center & Spa",
+      "24/7 Concierge & Valet Service",
+      "100% Power Backup & High Speed Elevators"
+    ],
+    "houseRules": {
+      "tenantPreference": "Corporate Executives / Family",
+      "foodPreference": "Any",
+      "petPolicy": "Pets Allowed",
+      "lockInPeriod": "12 Months",
+      "noticePeriod": "2 Months"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-04-09T09:00:00.000Z"
+  },
+  {
+    "id": "prop-111",
+    "title": "Smart 2 BHK in My Home Avatar, Gachibowli",
+    "tagline": "Next to DLF Cyber City, Microsoft & Amazon tech campuses",
+    "description": "Contemporary 2 BHK apartment in the sought-after My Home Avatar gated community. Premium woodwork in both bedrooms, dry & wet modular kitchen, high floor offering scenic views of the Outer Ring Road skyline, and 5-star society club.",
+    "propertyType": "2 BHK",
+    "bhk": 2,
+    "bathrooms": 2,
+    "balconies": 1,
+    "carpetAreaSqFt": 1315,
+    "furnishing": "Semi-Furnished",
+    "floor": "12th of 30 floors",
+    "totalFloors": 30,
+    "monthlyRent": 34000,
+    "securityDeposit": 100000,
+    "maintenanceCharges": 2800,
+    "city": "Hyderabad",
+    "locality": "Gachibowli / Financial District Corridor",
+    "confidentialExactAddress": "Block 7, Flat 1205, My Home Avatar, DLF Road, Gachibowli, Hyderabad - 500089. Landmark: Near Continental Hospital",
+    "googleMapsCoordinates": {
+      "lat": 17.4399,
+      "lng": 78.3489
+    },
+    "ownerId": "owner-11",
+    "ownerName": "Venkat Reddy",
+    "confidentialOwnerPhone": "+91 99890 23412",
+    "confidentialOwnerEmail": "venkat.reddy.gachibowli@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Covered Parking",
+      "50,000 sq.ft Clubhouse & Gym",
+      "Tennis & Cricket Practice Nets",
+      "24/7 Security & Video Intercom",
+      "Power Backup & Piped Gas"
+    ],
+    "houseRules": {
+      "tenantPreference": "Family / IT Professionals",
+      "foodPreference": "Any",
+      "petPolicy": "Discuss with Owner",
+      "lockInPeriod": "11 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-04-11T14:30:00.000Z"
+  },
+  {
+    "id": "prop-112",
+    "title": "Charming 3 BHK Garden Villa in Koregaon Park",
+    "tagline": "Quiet leafy lane, private lawn, stone patio, close to German Bakery",
+    "description": "Rare low-rise 3 BHK garden duplex villa in premier Koregaon Park Lane 7. Features private manicured garden, high wooden beam ceilings, European kitchen with granite countertops, airy bedrooms with bay windows, and private open driveway.",
+    "propertyType": "3 BHK",
+    "bhk": 3,
+    "bathrooms": 3,
+    "balconies": 2,
+    "carpetAreaSqFt": 2100,
+    "furnishing": "Semi-Furnished",
+    "floor": "Ground & 1st (Duplex)",
+    "totalFloors": 2,
+    "monthlyRent": 52000,
+    "securityDeposit": 160000,
+    "maintenanceCharges": 3500,
+    "city": "Pune",
+    "locality": "Koregaon Park (Lane 7 Vicinity)",
+    "confidentialExactAddress": "Bungalow #19, Gulmohar Woods, Lane 7, Koregaon Park, Pune - 411001. Landmark: Near German Bakery",
+    "googleMapsCoordinates": {
+      "lat": 18.5362,
+      "lng": 73.894
+    },
+    "ownerId": "owner-12",
+    "ownerName": "Advait Kulkarni",
+    "confidentialOwnerPhone": "+91 98220 78432",
+    "confidentialOwnerEmail": "advait.kulkarni.pune@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Private 2-Car Driveway Parking",
+      "Private Lawn & Stone Patio",
+      "Solar Heated Water Supply",
+      "Inverter Power Backup",
+      "Pet Friendly Fenced Garden"
+    ],
+    "houseRules": {
+      "tenantPreference": "Family / Working Professionals",
+      "foodPreference": "Any (Non-veg allowed)",
+      "petPolicy": "Pets Allowed & Welcomed",
+      "lockInPeriod": "11 Months",
+      "noticePeriod": "2 Months"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-04-12T16:00:00.000Z"
   }
 ]
