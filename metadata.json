@@ -1,0 +1,6 @@
+{
+  "name": "ZenithHomes AI - Zero Brokerage Real Estate",
+  "description": "Zero brokerage real estate marketplace where an AI concierge mediates between verified property owners and prospective tenants, safeguarding owner privacy until direct visit booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

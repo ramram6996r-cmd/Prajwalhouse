@@ -1,0 +1,352 @@
+[
+  {
+    "id": "prop-1792780372175",
+    "title": "Charming 2 BHK in Indiranagar Near Metro",
+    "tagline": "Direct from Owner · Verified Listing",
+    "description": "",
+    "propertyType": "2 BHK",
+    "bhk": 2,
+    "bathrooms": 2,
+    "balconies": 1,
+    "carpetAreaSqFt": 1100,
+    "furnishing": "Fully Furnished",
+    "floor": "1st floor",
+    "totalFloors": 4,
+    "monthlyRent": 36000,
+    "securityDeposit": 100000,
+    "maintenanceCharges": 0,
+    "city": "Bengaluru",
+    "locality": "City Center",
+    "confidentialExactAddress": "Flat 202, Green Meadows, 5th Main, Indiranagar, Bengaluru - 560038",
+    "googleMapsCoordinates": {
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    "ownerId": "owner-new-123",
+    "ownerName": "Ramesh Kumar",
+    "confidentialOwnerPhone": "+91 98459 99888",
+    "confidentialOwnerEmail": "owner@example.com",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Covered Car Parking",
+      "24/7 Security"
+    ],
+    "houseRules": {
+      "tenantPreference": "Any",
+      "foodPreference": "Any",
+      "petPolicy": "Discuss with Owner",
+      "lockInPeriod": "6 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-10-23T18:32:52.175Z"
+  },
+  {
+    "id": "prop-101",
+    "title": "Sunlit 3 BHK in Sobha City with Green Park View",
+    "tagline": "Premium gated society with Olympic clubhouse, 100% power backup",
+    "description": "Spacious high-rise apartment on the 9th floor featuring natural cross-ventilation, Italian marble finish in living room, modular chimney kitchen with piped gas, and oversized balconies overlooking the green amphitheater. Located minutes from Manyata Tech Park.",
+    "propertyType": "3 BHK",
+    "bhk": 3,
+    "bathrooms": 3,
+    "balconies": 2,
+    "carpetAreaSqFt": 1850,
+    "furnishing": "Semi-Furnished",
+    "floor": "9th of 18 floors",
+    "totalFloors": 18,
+    "monthlyRent": 48000,
+    "securityDeposit": 180000,
+    "maintenanceCharges": 4200,
+    "city": "Bengaluru",
+    "locality": "Thanisandra Main Road (Near Manyata Tech Park)",
+    "confidentialExactAddress": "Flat 904, Tower B, Sobha City Emerald, Thanisandra Main Road, Chokkanahalli, Bengaluru - 560064. Landmark: Opposite Federal Bank",
+    "googleMapsCoordinates": {
+      "lat": 13.0652,
+      "lng": 77.6254
+    },
+    "ownerId": "owner-1",
+    "ownerName": "Col. Vikramaditya Rathore (Retd.)",
+    "confidentialOwnerPhone": "+91 98451 88234",
+    "confidentialOwnerEmail": "vikram.rathore.homes@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Covered Reserved Car Parking (2 bays)",
+      "24/7 DG Power Backup",
+      "High-speed Elevators + Service Lift",
+      "Swimming Pool & Heated Jacuzzi",
+      "State-of-the-art Gymnasium",
+      "24/7 Gated Security & RFID Entry",
+      "Piped Gas (Adani Total)",
+      "Children Play Area & Tennis Court"
+    ],
+    "houseRules": {
+      "tenantPreference": "Family / Working Professionals",
+      "foodPreference": "Any (Non-Veg allowed)",
+      "petPolicy": "Pets Allowed (Trained)",
+      "lockInPeriod": "6 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-03-15T08:30:00.000Z"
+  },
+  {
+    "id": "prop-102",
+    "title": "Designer 2 BHK in Indiranagar 100ft Road Corridor",
+    "tagline": "Walking distance to Metro, boutique cafes and co-working spaces",
+    "description": "Chic, boutique 2 BHK apartment designed for modern startup founders or executives. Custom birchwood wardrobes, master bedroom with en-suite shower panel, dedicated work-from-home den with high-speed fiber wiring, and private covered terrace garden.",
+    "propertyType": "2 BHK",
+    "bhk": 2,
+    "bathrooms": 2,
+    "balconies": 1,
+    "carpetAreaSqFt": 1280,
+    "furnishing": "Fully Furnished",
+    "floor": "3rd of 4 floors (With Lift)",
+    "totalFloors": 4,
+    "monthlyRent": 42000,
+    "securityDeposit": 150000,
+    "maintenanceCharges": 2500,
+    "city": "Bengaluru",
+    "locality": "Indiranagar 100ft Road Vicinity, HAL 2nd Stage",
+    "confidentialExactAddress": "Apartment 301, Casa Magnolia, 12th Main Road, HAL 2nd Stage, Indiranagar, Bengaluru - 560038. Landmark: 200m behind Toit Brewpub",
+    "googleMapsCoordinates": {
+      "lat": 12.9719,
+      "lng": 77.6412
+    },
+    "ownerId": "owner-2",
+    "ownerName": "Dr. Shweta Iyer",
+    "confidentialOwnerPhone": "+91 99002 44719",
+    "confidentialOwnerEmail": "shweta.iyer.doc@outlook.com",
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Covered Car Parking",
+      "Full Teak & Birchwood Furnishing",
+      "55\" Sony 4K Smart TV & Soundbar",
+      "Bosch Inverter Washing Machine & Refrigerator",
+      "Water Purifier (RO + UV)",
+      "Lift with Biometric Access",
+      "Fiber Internet Ready (Airtel / ACT)"
+    ],
+    "houseRules": {
+      "tenantPreference": "Working Professionals / Bachelors Welcome",
+      "foodPreference": "Any / No restriction",
+      "petPolicy": "Cats allowed / Small dogs",
+      "lockInPeriod": "11 Months",
+      "noticePeriod": "2 Months"
+    },
+    "availableFrom": "From 1st of next month",
+    "verified": true,
+    "createdAt": "2026-03-20T11:15:00.000Z"
+  },
+  {
+    "id": "prop-103",
+    "title": "Ultra Luxury 4 BHK Sky Villa in Bandra West",
+    "tagline": "Sea-breeze vantage, private elevator foyer, Italian marble layout",
+    "description": "An architectural statement residence in the heart of Bandra. Expansive panoramic sea deck, private elevator that opens directly into your private foyer, climate-controlled VRV air conditioning, automated smart mood lighting, and separate quarters for domestic staff.",
+    "propertyType": "4 BHK",
+    "bhk": 4,
+    "bathrooms": 5,
+    "balconies": 3,
+    "carpetAreaSqFt": 3100,
+    "furnishing": "Fully Furnished",
+    "floor": "16th of 22 floors",
+    "totalFloors": 22,
+    "monthlyRent": 220000,
+    "securityDeposit": 800000,
+    "maintenanceCharges": 15000,
+    "city": "Mumbai",
+    "locality": "Pali Hill / Bandra West",
+    "confidentialExactAddress": "Penthouse 1601, The Celeste Towers, Nargis Dutt Road, Pali Hill, Bandra West, Mumbai - 400050. Landmark: Near Olive Bar & Kitchen",
+    "googleMapsCoordinates": {
+      "lat": 19.0657,
+      "lng": 72.8258
+    },
+    "ownerId": "owner-3",
+    "ownerName": "Aman Singhania",
+    "confidentialOwnerPhone": "+91 98200 91823",
+    "confidentialOwnerEmail": "aman.singhania.capital@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "3 Dedicated Basement Car Parking Slots",
+      "Private Keycard Elevator Foyer",
+      "Infinity Rooftop Pool overlooking Arabian Sea",
+      "Private Butler/Domestic Staff Quarters",
+      "Smart Home Automation (Lutron & Crestron)",
+      "24/7 Multi-tier Concierge & Valet",
+      "EV Charger point installed"
+    ],
+    "houseRules": {
+      "tenantPreference": "Corporate Expats / Senior Executives / Families",
+      "foodPreference": "Any / Flexible",
+      "petPolicy": "Pets Allowed",
+      "lockInPeriod": "12 Months",
+      "noticePeriod": "2 Months"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-03-28T14:00:00.000Z"
+  },
+  {
+    "id": "prop-104",
+    "title": "Peaceful 2 BHK in HSR Layout Sector 2",
+    "tagline": "Quiet tree-lined lane, close to Agara Lake & Startup Hubs",
+    "description": "Well-maintained east-facing independent floor apartment. Excellent vastu, wide private balcony overlooking lush rain trees, modular storage, Cauvery water connection, and low maintenance overheads. Perfect for young IT couples or roommates.",
+    "propertyType": "2 BHK",
+    "bhk": 2,
+    "bathrooms": 2,
+    "balconies": 1,
+    "carpetAreaSqFt": 1150,
+    "furnishing": "Semi-Furnished",
+    "floor": "2nd of 3 floors",
+    "totalFloors": 3,
+    "monthlyRent": 33000,
+    "securityDeposit": 120000,
+    "maintenanceCharges": 1800,
+    "city": "Bengaluru",
+    "locality": "HSR Layout Sector 2, 24th Main",
+    "confidentialExactAddress": "House #412, 17th Cross, Sector 2, HSR Layout, Bengaluru - 560102. Landmark: Behind Sector 2 BDA Complex",
+    "googleMapsCoordinates": {
+      "lat": 12.9116,
+      "lng": 77.6533
+    },
+    "ownerId": "owner-4",
+    "ownerName": "M. K. Narayanan",
+    "confidentialOwnerPhone": "+91 94480 32190",
+    "confidentialOwnerEmail": "mknarayanan.hsr@yahoo.co.in",
+    "images": [
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502005229762-ee1b2b81b858?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Covered Stilt Bike & Car Parking",
+      "Dual Water Supply (Cauvery + Borewell)",
+      "Solar Water Heater in Master Bath",
+      "CCTV Surveillance in common areas",
+      "Separate Electric & Water Sub-meters"
+    ],
+    "houseRules": {
+      "tenantPreference": "Family Preferred / Clean Professionals",
+      "foodPreference": "Vegetarian Preferred (Discussable)",
+      "petPolicy": "No Pets Allowed",
+      "lockInPeriod": "11 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-03-25T16:20:00.000Z"
+  },
+  {
+    "id": "prop-105",
+    "title": "Modern High-Rise 3 BHK in Cyber City Corridor",
+    "tagline": "Direct DLF Cyber Hub connectivity, clubhouse, squash court",
+    "description": "Spacious corner flat with uninterrupted views of the city skyline. Contemporary modular kitchen with island counter, wooden flooring in master bedroom, double glazed soundproof glass windows, and resort-grade amenities in a top-rated society.",
+    "propertyType": "3 BHK",
+    "bhk": 3,
+    "bathrooms": 3,
+    "balconies": 2,
+    "carpetAreaSqFt": 1950,
+    "furnishing": "Semi-Furnished",
+    "floor": "14th of 26 floors",
+    "totalFloors": 26,
+    "monthlyRent": 55000,
+    "securityDeposit": 150000,
+    "maintenanceCharges": 4800,
+    "city": "Gurugram",
+    "locality": "Sector 54, Golf Course Road Corridor",
+    "confidentialExactAddress": "Apartment 1402, DLF Park Place, Sector 54, Golf Course Road, Gurugram - 122011. Landmark: Rapid Metro Pillar 188",
+    "googleMapsCoordinates": {
+      "lat": 28.4385,
+      "lng": 77.1022
+    },
+    "ownerId": "owner-5",
+    "ownerName": "Mrs. Neha Chadha",
+    "confidentialOwnerPhone": "+91 98111 67205",
+    "confidentialOwnerEmail": "neha.chadha.delhi@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "2 Underground Basement Parking slots",
+      "24/7 Security with Smart Access Gate",
+      "Squash & Badminton Indoor Courts",
+      "Olympic-sized Swimming Pool",
+      "Piped Natural Gas (PNG)",
+      "Full 100% DG Power Backup"
+    ],
+    "houseRules": {
+      "tenantPreference": "Corporate Executives / Family",
+      "foodPreference": "Any",
+      "petPolicy": "Pets Allowed",
+      "lockInPeriod": "11 Months",
+      "noticePeriod": "2 Months"
+    },
+    "availableFrom": "From 15th of next month",
+    "verified": true,
+    "createdAt": "2026-03-30T09:10:00.000Z"
+  },
+  {
+    "id": "prop-106",
+    "title": "Lakeview Studio Penthouse in Financial District",
+    "tagline": "Ideal for tech leaders working in Gachibowli / Financial District",
+    "description": "Fully furnished minimalist studio loft with open floor plan, glass partition bedroom, premium ergonomic desk & chair, high-capacity silent air conditioning, kitchenette with induction & microwave, and sunset balcony facing Osman Sagar lake breeze.",
+    "propertyType": "Studio",
+    "bhk": 1,
+    "bathrooms": 1,
+    "balconies": 1,
+    "carpetAreaSqFt": 680,
+    "furnishing": "Fully Furnished",
+    "floor": "18th of 20 floors",
+    "totalFloors": 20,
+    "monthlyRent": 26000,
+    "securityDeposit": 75000,
+    "maintenanceCharges": 2000,
+    "city": "Hyderabad",
+    "locality": "Financial District, Nanakramguda",
+    "confidentialExactAddress": "Studio Loft 1803, My Home Bhooja, Financial District, Nanakramguda, Hyderabad - 500032. Landmark: Next to Waverock SEZ",
+    "googleMapsCoordinates": {
+      "lat": 17.4193,
+      "lng": 78.3489
+    },
+    "ownerId": "owner-6",
+    "ownerName": "K. R. V. Prasad",
+    "confidentialOwnerPhone": "+91 97010 43981",
+    "confidentialOwnerEmail": "krv.prasad.hyd@gmail.com",
+    "images": [
+      "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "amenities": [
+      "Dedicated Car Parking",
+      "Clubhouse & Rooftop Lounge",
+      "High-speed Fiber WiFi Included",
+      "All furnishings + appliances (TV, Fridge, Washing machine)",
+      "Concierge Desk & Laundromat in building"
+    ],
+    "houseRules": {
+      "tenantPreference": "Single Working Professional",
+      "foodPreference": "Any",
+      "petPolicy": "Small pets allowed",
+      "lockInPeriod": "6 Months",
+      "noticePeriod": "1 Month"
+    },
+    "availableFrom": "Immediate",
+    "verified": true,
+    "createdAt": "2026-04-01T12:00:00.000Z"
+  }
+]

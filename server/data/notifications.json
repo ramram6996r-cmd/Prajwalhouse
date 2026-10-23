@@ -1,0 +1,42 @@
+[
+  {
+    "id": "notif-tenant-1792780379954",
+    "recipientId": "tenant-sneha",
+    "recipientRole": "tenant",
+    "type": "visit_confirmed_tenant",
+    "title": "🎉 Visit Pass Confirmed for Charming 2 BHK in Indiranagar Near Metro",
+    "message": "Your visit with owner Ramesh Kumar is scheduled on 2026-10-26 (Morning (10:00 AM - 12:00 PM)). Owner phone and exact address unlocked.",
+    "propertyTitle": "Charming 2 BHK in Indiranagar Near Metro",
+    "date": "2026-10-26",
+    "timeSlot": "Morning (10:00 AM - 12:00 PM)",
+    "tenantName": "Sneha Patel",
+    "tenantPhone": "+91 99887 76655",
+    "ownerName": "Ramesh Kumar",
+    "ownerPhone": "+91 98459 99888",
+    "exactAddress": "Flat 202, Green Meadows, 5th Main, Indiranagar, Bengaluru - 560038",
+    "whatsappUrl": "https://wa.me/919988776655?text=%F0%9F%8E%89%20*ZenithHomes%20Visit%20Confirmation*%0A%0AHi%20Sneha%20Patel%2C%20your%20walkthrough%20for%20*Charming%202%20BHK%20in%20Indiranagar%20Near%20Metro*%20is%20confirmed!%0A%0A%E2%80%A2%20Scheduled%20Date%3A%20*2026-10-26*%20(Morning%20(10%3A00%20AM%20-%2012%3A00%20PM))%0A%E2%80%A2%20Verified%20Owner%3A%20*Ramesh%20Kumar*%0A%E2%80%A2%20Owner%20Mobile%3A%20*%2B91%2098459%2099888*%0A%E2%80%A2%20Exact%20Flat%20Address%3A%20*Flat%20202%2C%20Green%20Meadows%2C%205th%20Main%2C%20Indiranagar%2C%20Bengaluru%20-%20560038*%0A%E2%80%A2%20GPS%20Navigation%3A%20https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DFlat%2520202%252C%2520Green%2520Meadows%252C%25205th%2520Main%252C%2520Indiranagar%252C%2520Bengaluru%2520-%2520560038",
+    "whatsappText": "🎉 *ZenithHomes Visit Confirmation*\n\nHi Sneha Patel, your walkthrough for *Charming 2 BHK in Indiranagar Near Metro* is confirmed!\n\n• Scheduled Date: *2026-10-26* (Morning (10:00 AM - 12:00 PM))\n• Verified Owner: *Ramesh Kumar*\n• Owner Mobile: *+91 98459 99888*\n• Exact Flat Address: *Flat 202, Green Meadows, 5th Main, Indiranagar, Bengaluru - 560038*\n• GPS Navigation: https://www.google.com/maps/search/?api=1&query=Flat%20202%2C%20Green%20Meadows%2C%205th%20Main%2C%20Indiranagar%2C%20Bengaluru%20-%20560038",
+    "createdAt": "2026-10-23T18:32:59.954Z",
+    "read": false
+  },
+  {
+    "id": "notif-owner-1792780379954",
+    "recipientId": "owner-new-123",
+    "recipientRole": "owner",
+    "type": "visit_booked_owner",
+    "title": "🔔 New Visit Request from Sneha Patel",
+    "message": "Tenant Sneha Patel (+91 99887 76655) has booked a visit for \"Charming 2 BHK in Indiranagar Near Metro\" on 2026-10-26 (Morning (10:00 AM - 12:00 PM)). ₹199 token verified.",
+    "propertyTitle": "Charming 2 BHK in Indiranagar Near Metro",
+    "date": "2026-10-26",
+    "timeSlot": "Morning (10:00 AM - 12:00 PM)",
+    "tenantName": "Sneha Patel",
+    "tenantPhone": "+91 99887 76655",
+    "ownerName": "Ramesh Kumar",
+    "ownerPhone": "+91 98459 99888",
+    "exactAddress": "Flat 202, Green Meadows, 5th Main, Indiranagar, Bengaluru - 560038",
+    "whatsappUrl": "https://wa.me/919845999888?text=%F0%9F%94%94%20*ZenithHomes%20Alert%3A%20New%20Walkthrough%20Booked!*%0A%0AHello%20Ramesh%20Kumar%2C%20tenant%20*Sneha%20Patel*%20(Mobile%3A%20%2B91%2099887%2076655)%20has%20booked%20an%20official%20walkthrough%20for%20your%20property%20*Charming%202%20BHK%20in%20Indiranagar%20Near%20Metro*%20on%20*2026-10-26*%20(Morning%20(10%3A00%20AM%20-%2012%3A00%20PM)).%0A%0A%E2%80%A2%20Status%3A%20%E2%82%B9199%20Token%20Paid%20%26%20Verified%0A%E2%80%A2%20Tenant%20Contact%3A%20%2B91%2099887%2076655%0A%0APlease%20keep%20the%20flat%20accessible%20at%20the%20scheduled%20slot!",
+    "whatsappText": "🔔 *ZenithHomes Alert: New Walkthrough Booked!*\n\nHello Ramesh Kumar, tenant *Sneha Patel* (Mobile: +91 99887 76655) has booked an official walkthrough for your property *Charming 2 BHK in Indiranagar Near Metro* on *2026-10-26* (Morning (10:00 AM - 12:00 PM)).\n\n• Status: ₹199 Token Paid & Verified\n• Tenant Contact: +91 99887 76655\n\nPlease keep the flat accessible at the scheduled slot!",
+    "createdAt": "2026-10-23T18:32:59.954Z",
+    "read": false
+  }
+]
