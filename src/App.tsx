@@ -35,6 +35,7 @@ import { HowItWorksSection } from './components/HowItWorksSection.js';
 import { Footer } from './components/Footer.js';
 import { WhatsAppNotificationModal } from './components/WhatsAppNotificationModal.js';
 import { Property, UserProfile, VisitBooking, AppNotification } from './types/index.js';
+import { initialProperties } from './data/seedData.js';
 
 export default function App() {
   // Navigation & View state
@@ -63,10 +64,10 @@ export default function App() {
   });
   const [serverHasGroqKey, setServerHasGroqKey] = useState<boolean>(false);
 
-  // Properties & Visits state
-  const [properties, setProperties] = useState<Property[]>([]);
+  // Properties & Visits state (preloaded with 20 verified direct owner properties across India)
+  const [properties, setProperties] = useState<Property[]>(initialProperties);
   const [userVisits, setUserVisits] = useState<VisitBooking[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // Search & Filter state
   const [searchTab, setSearchTab] = useState<'rent' | 'buy' | 'commercial'>('rent');
@@ -157,9 +158,20 @@ export default function App() {
     localStorage.setItem('zenith_groq_model', model);
   };
 
+  // Helper: Normalize city names for Indian real estate searches (e.g. Bangalore -> Bengaluru, Gurgaon -> Gurugram)
+  const normalizeCityName = (cityStr: string) => {
+    const c = (cityStr || '').trim().toLowerCase();
+    if (c === 'all' || c === 'all cities' || c === 'all metro cities') return 'all';
+    if (c.includes('bengaluru') || c.includes('bangalore') || c === 'blr') return 'bengaluru';
+    if (c.includes('mumbai') || c.includes('bombay')) return 'mumbai';
+    if (c.includes('gurugram') || c.includes('gurgaon') || c === 'ggn' || c.includes('delhi')) return 'gurugram';
+    if (c.includes('hyderabad') || c === 'hyd' || c.includes('cyberabad')) return 'hyderabad';
+    if (c.includes('pune') || c.includes('poona')) return 'pune';
+    return c;
+  };
+
   // Fetch properties and user visits
   const fetchData = async () => {
-    setLoading(true);
     try {
       fetch('/api/config/ai-status')
         .then(res => res.json())
@@ -172,7 +184,9 @@ export default function App() {
       const propRes = await fetch(`/api/properties${userIdParam}`);
       if (propRes.ok) {
         const propData = await propRes.json();
-        setProperties(propData);
+        if (Array.isArray(propData) && propData.length > 0) {
+          setProperties(propData);
+        }
       }
 
       if (currentUser?.id) {
@@ -196,7 +210,7 @@ export default function App() {
         }
       }
     } catch (err) {
-      console.error('Error fetching properties:', err);
+      console.warn('Network fetch delayed or error, active properties in memory:', err);
     } finally {
       setLoading(false);
     }
@@ -234,21 +248,65 @@ export default function App() {
     }
   };
 
-  // Filter & Sort
+  // Filter & Sort with intelligent multi-field and alias matching
   const filteredProperties = properties
     .filter(prop => {
-      if (selectedCity !== 'All' && prop.city !== selectedCity) return false;
-      if (selectedBhk !== 'All' && prop.propertyType !== selectedBhk) return false;
-      if (selectedFurnishing !== 'All' && prop.furnishing !== selectedFurnishing) return false;
-      if (prop.monthlyRent > maxBudget) return false;
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const matchTitle = prop.title.toLowerCase().includes(q);
-        const matchLocality = prop.locality.toLowerCase().includes(q);
-        const matchCity = prop.city.toLowerCase().includes(q);
-        const matchAmenities = prop.amenities.some(a => a.toLowerCase().includes(q));
-        if (!matchTitle && !matchLocality && !matchCity && !matchAmenities) return false;
+      // 1. City Filter with aliases
+      const normSelected = normalizeCityName(selectedCity);
+      const normPropCity = normalizeCityName(prop.city);
+      if (normSelected !== 'all' && normPropCity !== normSelected) {
+        return false;
       }
+
+      // 2. BHK Filter (flexible string and number comparison)
+      if (selectedBhk !== 'All') {
+        const isStudio = selectedBhk.toLowerCase().includes('studio');
+        if (isStudio) {
+          if (!prop.propertyType.toLowerCase().includes('studio')) return false;
+        } else {
+          const targetNum = parseInt(selectedBhk);
+          const typeMatch = prop.propertyType.toLowerCase().includes(selectedBhk.toLowerCase());
+          const numMatch = !isNaN(targetNum) && prop.bhk === targetNum;
+          if (!typeMatch && !numMatch) return false;
+        }
+      }
+
+      // 3. Furnishing Filter
+      if (selectedFurnishing !== 'All' && prop.furnishing !== selectedFurnishing) {
+        return false;
+      }
+
+      // 4. Budget Filter
+      if (prop.monthlyRent && prop.monthlyRent > maxBudget) {
+        return false;
+      }
+
+      // 5. Search Query Filter with smart tokens
+      if (searchQuery.trim()) {
+        const rawQ = searchQuery.toLowerCase().trim();
+        const normQ = normalizeCityName(rawQ);
+
+        // General real estate keywords should not eliminate listings
+        const isGenericTerm = ['flat', 'apartment', 'house', 'home', 'rent', 'property', 'properties', 'room', 'rooms', 'bhk'].includes(rawQ);
+        if (isGenericTerm) return true;
+
+        const cityAliasMatch = normQ !== 'all' && normPropCity === normQ;
+        const matchTitle = prop.title.toLowerCase().includes(rawQ);
+        const matchLocality = prop.locality.toLowerCase().includes(rawQ);
+        const matchCity = prop.city.toLowerCase().includes(rawQ) || cityAliasMatch;
+        const matchType = prop.propertyType.toLowerCase().includes(rawQ) ||
+          (rawQ.includes('bhk') && rawQ.includes(String(prop.bhk))) ||
+          (rawQ.replace(/\s+/g, '').includes(`${prop.bhk}bhk`));
+        const matchFurnishing = prop.furnishing?.toLowerCase().includes(rawQ);
+        const matchAmenities = prop.amenities?.some(a => a.toLowerCase().includes(rawQ));
+        const matchDescription = prop.description?.toLowerCase().includes(rawQ);
+        const matchTagline = prop.tagline?.toLowerCase().includes(rawQ);
+
+        if (!matchTitle && !matchLocality && !matchCity && !matchType && !matchFurnishing && !matchAmenities && !matchDescription && !matchTagline) {
+          return false;
+        }
+      }
+
       return true;
     })
     .sort((a, b) => {
@@ -691,20 +749,30 @@ export default function App() {
                     <MapPin className="w-3 h-3 text-neutral-500" />
                     <span>City:</span>
                   </span>
-                  {['All', 'Bengaluru', 'Mumbai', 'Gurugram', 'Hyderabad', 'Pune'].map((c) => (
-                    <button
-                      key={c}
-                      type="button"
-                      onClick={() => setSelectedCity(c)}
-                      className={`px-3 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer ${
-                        selectedCity === c
-                          ? 'bg-neutral-900 text-white font-semibold shadow-xs'
-                          : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
-                      }`}
-                    >
-                      {c === 'All' ? 'All Cities' : c}
-                    </button>
-                  ))}
+                  {['All', 'Bengaluru', 'Mumbai', 'Gurugram', 'Hyderabad', 'Pune'].map((c) => {
+                    const count = c === 'All'
+                      ? properties.length
+                      : properties.filter(p => normalizeCityName(p.city) === normalizeCityName(c)).length;
+                    return (
+                      <button
+                        key={c}
+                        type="button"
+                        onClick={() => setSelectedCity(c)}
+                        className={`px-3 py-1 rounded-md text-xs font-medium transition-colors cursor-pointer flex items-center gap-1.5 ${
+                          selectedCity === c
+                            ? 'bg-neutral-900 text-white font-semibold shadow-xs'
+                            : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-700'
+                        }`}
+                      >
+                        <span>{c === 'All' ? 'All Cities' : c}</span>
+                        <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                          selectedCity === c ? 'bg-neutral-800 text-amber-300 font-bold' : 'bg-neutral-200/90 text-neutral-600'
+                        }`}>
+                          {count}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {/* BHK Filter Pills */}
@@ -786,20 +854,82 @@ export default function App() {
                 )}
               </div>
 
-              {loading ? (
+              {loading && properties.length === 0 ? (
                 <div className="py-20 text-center text-xs text-neutral-500">
                   <div className="w-6 h-6 border-2 border-neutral-300 border-t-neutral-900 rounded-full animate-spin mx-auto mb-2" />
                   <span>Loading verified properties...</span>
                 </div>
               ) : filteredProperties.length === 0 ? (
-                <div className="py-16 text-center bg-white border border-neutral-200 rounded-xl p-8">
-                  <Building className="w-10 h-10 text-neutral-300 mx-auto mb-3" />
-                  <h4 className="text-base font-bold text-neutral-800">
-                    No properties match your filter
-                  </h4>
-                  <p className="text-xs text-neutral-500 mt-1 max-w-sm mx-auto">
-                    Try expanding the budget slider or selecting "All Metro Cities" to see more verified homes.
-                  </p>
+                <div className="space-y-8">
+                  <div className="py-10 text-center bg-white border border-neutral-200 rounded-xl p-8 shadow-xs">
+                    <Building className="w-10 h-10 text-neutral-400 mx-auto mb-3" />
+                    <h4 className="text-base font-bold text-neutral-900">
+                      No exact matches for your selected criteria
+                    </h4>
+                    <p className="text-xs text-neutral-500 mt-1.5 max-w-md mx-auto leading-relaxed">
+                      {selectedCity !== 'All' ? `No listings in ${selectedCity} match the current price/BHK filter. ` : ''}
+                      Click below to reset filters and explore all verified direct-owner listings.
+                    </p>
+                    <div className="mt-5 flex justify-center">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedCity('All');
+                          setSelectedBhk('All');
+                          setSelectedFurnishing('All');
+                          setSearchQuery('');
+                          setMaxBudget(250000);
+                        }}
+                        className="px-5 py-2.5 bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs rounded-lg transition-colors shadow-xs cursor-pointer inline-flex items-center gap-2"
+                      >
+                        <RefreshCw className="w-3.5 h-3.5" />
+                        <span>Show All Verified Properties ({properties.length} Homes)</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Fallback Display of Recommended Homes so properties are ALWAYS visible */}
+                  <div>
+                    <div className="flex items-center justify-between mb-4 pb-2 border-b border-neutral-200">
+                      <div>
+                        <h3 className="text-sm font-bold text-neutral-900 flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-amber-500" />
+                          <span>All Verified Properties ({properties.length} Available)</span>
+                        </h3>
+                        <p className="text-[11px] text-neutral-500 mt-0.5">
+                          Browse our full catalog across Bengaluru, Mumbai, Gurugram, Hyderabad, and Pune
+                        </p>
+                      </div>
+                      <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md">
+                        100% Zero Brokerage
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {properties.map((prop) => (
+                        <PropertyCard
+                          key={prop.id}
+                          property={prop}
+                          isUnlocked={isPropertyUnlocked(prop.id)}
+                          currentUser={currentUser}
+                          onOpenDetails={() => handlePropertyCardClick(prop)}
+                          onOpenChat={() => handlePropertyCardClick(prop)}
+                          onScheduleVisit={(property) => {
+                            if (!currentUser) {
+                              setPendingProperty(property);
+                              triggerLoginRequirement(`Sign in to schedule a visit for "${property.title}"`);
+                            } else {
+                              setSelectedPropertyForVisit(property);
+                            }
+                          }}
+                          onRequireLogin={() => {
+                            setPendingProperty(prop);
+                            triggerLoginRequirement(`Sign in to view details and chat with the AI Concierge for "${prop.title}"`);
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
